@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="hello_id" class="com.pack.hello.HelloGreet">
+        <property name="msg" value="Accessing property!!!!" />
+    </bean>
+
+    <bean id="ticket_id" class="com.pack.ticket.Ticket">
+        <constructor-arg value="101" />
+        <constructor-arg value="8-23-2024"/>
+    </bean>
+
+    <bean id="student_info" class="com.pack.student_pack.Students">
+        <property name="id">
+            <value>101</value>
+        </property>
+        <property name="st_name">
+            <value>Pratham</value>
+        </property>
+        <property name="st_course">
+            <value>E-Commerce</value>
+        </property>
+    </bean>
+
+    <bean id="invoice_id" class="com.pack.invoice.InvoiceGenerator">
+        <constructor-arg>
+            <bean id="product_detail" class="com.pack.product.Product">
+                <property name="id" value="101" />
+                <property name="name" value="Too Yum" />
+            </bean>
+        </constructor-arg>
+    </bean>
+
+</beans>

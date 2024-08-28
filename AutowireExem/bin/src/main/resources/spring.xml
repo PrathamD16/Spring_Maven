@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dev" class="org.example.model.Dev" autowire="byType">
+    </bean>
+
+    <bean id="com" class="org.example.impl.Jvm" >
+    </bean>
+
+    <bean id="cal" class="org.example.impl.CalculatorProgram" primary="true">
+
+    </bean>
+
+<!--    <bean id="com1" class="org.example.sample.Program">-->
+
+<!--    </bean>-->
+
+
+<!--    For by name check for id of the bean-->
+    <bean id="orders" class="org.example.autowire_byname.model.Orders">
+        <property name="orderId" value="34445">
+        </property>
+        <property name="orderDetails" value="The Product is durable">
+        </property>
+        <property name="qty" value="12"> </property>
+    </bean>
+    <bean id="orders1" class="org.example.autowire_byname.model.Orders">
+        <property name="orderId" value="7869">
+        </property>
+        <property name="orderDetails" value="The product is long lasting">
+        </property>
+        <property name="qty" value="3"> </property>
+    </bean>
+    <bean id="customer" class="org.example.autowire_byname.model.Customer" autowire="byName">
+        <property name="custId" value="4001">
+        </property>
+        <property name="custName" value="Vidya Suthar">
+        </property>
+
+        <!--
+        We will comment this line by adding autowire=byName<property name="orders" ref="orders">
+        </property>-->
+    </bean>
+
+</beans>
