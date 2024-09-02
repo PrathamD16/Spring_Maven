@@ -41,6 +41,7 @@ public class UserController {
                 f1 = true;
                 mv.setViewName("Welcome.jsp");
                 mv.addObject("username", obj.getUsername());
+                break;
             }
         }
         if(!f1){

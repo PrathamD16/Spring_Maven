@@ -1,0 +1,12 @@
+<hibernate-mapping>
+   <class name="Student" table="STUDENT">
+      
+      
+      <cache usage="read-only">
+      <id column="ID" name="st_id" type="java.lang.Long">
+         <generator class="native">
+      </generator></id>
+      <property column="STUDENT_NAME" name="st_name" type="java.lang.String">   </property>
+      <property column="S_COURSE" name="course" type="java.lang.String"></property>
+</cache></class>
+</hibernate-mapping>
