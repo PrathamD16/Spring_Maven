@@ -1,0 +1,22 @@
+{
+    "id": 4,
+    "name": "ABC",
+    "gender": "Male",
+    "productList":[
+        {
+            "prod_name":"Soap",
+            "qty":1,
+            "price":100
+        },
+        {
+            "prod_name":"Perfume",
+            "qty":2,
+            "price":200
+        }
+    ],
+    "address": {
+        "city":"Pune",
+        "state":"Maharashtra",
+        "pincode":"41023"
+    }
+}
