@@ -1,15 +1,19 @@
 package com.example.hello_springboot.Shopping.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Document
 public class Address {
     private String city;
     private String state;
     private String pincode;
-
-    public Address(String city, String state, String pincode) {
-        this.city = city;
-        this.state = state;
-        this.pincode = pincode;
-    }
 
     @Override
     public String toString() {

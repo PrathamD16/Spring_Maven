@@ -20,11 +20,21 @@ public class ShopController {
         return "Order placed successfully";
     }
 
-//    @GetMapping("/getbycity/{city_name}")
-//    public String getByCity(@PathVariable String city_name){
-//
-//    }
-    @GetMapping("/getbycity/{city_name}")
+    @GetMapping("/getbycity/{city}")
+    public List<User> getbyCity(@PathVariable String city){
+        return repo.findByCity(city);
+//        List<User>res = repo.findByCity(city_name);
+//        return repo.findByCity(city_name);
+//        return res;
+//        return Optional.ofNullable(repo.findByCity(city))
+//                .orElseThrow(() -> new RuntimeException("Error"));
+//                .orElseThrow(() -> new ResourceNotFoundException
+//                ("No users found in city: " + cityName));
+    }
+
+
+
+    @GetMapping("/test/{city_name}")
     public String getByCity(@PathVariable String city_name) throws Exception{
         List<User>arr = repo.findByCity(city_name);
         for(User x: arr){

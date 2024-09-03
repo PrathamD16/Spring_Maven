@@ -9,7 +9,7 @@ public interface ShopRepo extends MongoRepository<User, String> {
     @Query("{'Name':?0}")
     List<User>findByName(String name);
 
-    @Query("{'Address.city':?0}")
+    @Query("{'Address.city:?0'}")
     List<User>findByCity(String city);
 
 //    @Query("{name: ?0}")

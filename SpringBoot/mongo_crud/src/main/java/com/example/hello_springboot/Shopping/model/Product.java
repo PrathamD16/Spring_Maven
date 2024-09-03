@@ -1,15 +1,20 @@
 package com.example.hello_springboot.Shopping.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Document
 public class Product {
     private String prod_name;
     private int qty;
     private double price;
 
-    public Product(String prod_name, int qty, double price) {
-        this.prod_name = prod_name;
-        this.qty = qty;
-        this.price = price;
-    }
 
     @Override
     public String toString() {
