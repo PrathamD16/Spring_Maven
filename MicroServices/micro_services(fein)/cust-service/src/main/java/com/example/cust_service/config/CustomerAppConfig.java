@@ -1,5 +1,6 @@
 package com.example.cust_service.config;
 
+import com.example.cust_service.feignclient.AddressClient;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -9,6 +10,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 @Configuration
 public class CustomerAppConfig {
+
     @Value("${addressservice.base.url}")
     private String baseURL;
     @Bean

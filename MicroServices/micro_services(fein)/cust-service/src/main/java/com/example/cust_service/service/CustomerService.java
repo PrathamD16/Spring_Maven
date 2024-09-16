@@ -31,8 +31,13 @@ public class CustomerService {
     private WebClient webClient;
 
 //    For feign client
-    @Autowired
+//    @Autowired
     private AddressClient addressClient;
+
+    @Autowired
+    public CustomerService(AddressClient addressClient) {
+        this.addressClient = addressClient;
+    }
 
 //    public CustomerService(RestTemplate restTemplate){
 //        this.restTemplate = restTemplate;
@@ -48,11 +53,10 @@ public class CustomerService {
 
 //    ****Using rest template
     public CustomerResponse getCustomerById(int id){
-
-        AddressResponse obj =  addressClient.getCustomerAddressById(id);
+        AddressResponse address = addressClient.getCustomerAddressById(id);
         Customer customer = repo.findById(id).get();
         CustomerResponse res = modelmapper.map(customer, CustomerResponse.class);
-        res.setAddress(obj);
+        res.setAddress(address);
         return res;
     }
 
